@@ -39,7 +39,7 @@ Provision the necessary AWS services needed for running the application:
 
 1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
 1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
+1. the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
 1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
 1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
 
@@ -70,3 +70,47 @@ The e2e tests are using Protractor and Jasmine.
 ## License
 
 [License](LICENSE.txt)
+
+## Application deployed link 
+(The link below may be expired, please login again aws account)
+- Udagram Frontend: http://ngoccn-udagram.s3-website-us-east-1.amazonaws.com
+- Udagram API: http://udagram-api.eba-pmvfnhpe.us-east-1.elasticbeanstalk.com
+
+## Project Setup
+1. Clone the project - `https://github.com/ngoccndev/ngoccn.git`
+2. Build & Run Frontend
+   1. Go into the project directory - `cd udagram/udagram-frontend`
+   2. Install the dependencies - `npm i`
+   3. Start the frontend - `npm run start`
+3. Build & Run Backend
+   1. Go into the project directory - `cd udagram/udagram-api`
+   2. Setup environment depend on `set_env.sh`
+   3. Install the dependencies - `npm i`
+   4. Start the backend - `npm run dev`
+4. In AWS, provision a publicly available RDS database running Postgres.
+5. In AWS, provision a s3 bucket for hosting the uploaded files.
+6. Setup ENV variables:     
+
+
+```
+POSTGRES_USERNAME=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=udagram.ce4szedxojpa.us-east-1.rds.amazonaws.com
+POSTGRES_DB=postgres
+AWS_BUCKET=ngoccn-udagram
+AWS_REGION=us-east-1
+AWS_PROFILE=default
+JWT_SECRET=cnn
+URL=http://ngoccn-udagram.s3-website-us-east-1.amazonaws.com
+
+```
+
+
+## Documentation
+- Screenshots of the AWS configurations and the CircleCI are provided in `./documents/captures/`
+
+## Built With
+
+- [Angular](https://angular.io/) - Single Page Application Framework
+- [Node](https://nodejs.org) - Javascript Runtime
+- [Express](https://expressjs.com/) - Javascript API Framework
